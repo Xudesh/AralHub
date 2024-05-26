@@ -1,0 +1,137 @@
+.content{
+    background-color: #f3f5f6;
+    padding: 0 7%;
+}
+
+
+.navigation{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav_home{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 15.5px;
+
+}
+
+.nav_chevron{
+    width: 26px;
+    height: 12px;
+    fill: inherit;
+}
+
+.nav_sub{
+    font-size: 15.5px;
+    color: black;
+}   
+
+
+.doctors{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.all_doctors{
+    font-size: 35px;
+}
+
+
+.doctor_select{
+    border-radius: 24px;
+    font-size: 17px;
+    border: none;
+    width: 100px;
+    padding: 6px 0 6px 10px;
+    outline: none;
+}
+
+
+
+.cards{
+    display: flex;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+
+.doctor_card{
+    width: 340px;
+    background: white;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+
+}
+
+.card_image img{
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 240px;
+}
+
+
+.card_info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+}
+
+.card_name, .card_name_link{
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.card_role{
+    display: flex;
+    gap: 7px;
+    font-size: 15.1px;
+}
+
+.question{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.card_sub{
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    color: dodgerblue;
+    gap: 4px;
+    align-items: center;
+    font-size: 15.5px;
+    margin: 7px 0;
+}
+
+.card_sub_ico{
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 15px;
+    height: 15px;
+}
+
+
+.learn_more{
+    text-align: center;
+    padding: 10px 0 50px;
+}
+
+
+.card_more{
+    background: dodgerblue;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}

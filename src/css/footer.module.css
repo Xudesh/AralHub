@@ -1,0 +1,68 @@
+.footer{
+    width: 100%;
+    background: dodgerblue;
+    height: 210px;
+    padding: 0 7%;
+}
+
+.footer_menu_div{
+    display: flex;
+    padding: 35px 0;
+    justify-content: space-between;
+    border-bottom: 1px solid #fafafa;
+}
+
+.footer_menu{
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+.footer_menu_li, .footer_menu_link{
+    text-decoration: none;
+    color: white;
+}
+
+.footer_menu_link:hover, .footer_login_btn:hover, .footer_register_btn:hover{
+    color: rgba(0, 0, 0, 0.6);
+    transition: 200ms color ease;
+}
+
+.footer_btns{
+    display: flex;
+    gap: 30px;
+}
+
+.footer_login_btn, .footer_register_btn{
+    background: transparent;
+    font-size: 16px;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+
+.footer_logo_div{
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo_name{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.logo_color{
+    color: dodgerblue;
+    background: white;
+    padding: 6px 2px 6px 9px;
+    border-radius: 3.2px;
+    margin-right: 1.1px;
+}
+
+.policy{
+    color: white;
+}
