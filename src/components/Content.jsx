@@ -1,19 +1,39 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import style from "../css/content.module.css"
-import chevron from '../assets/chevron.svg'
-import doctorImg from "../assets/Doctor.png"
-import chevroRignt from '../assets/right_chevron.svg'
-import { Link, Outlet } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { GetDoctor } from '../config/axios'
+import Card from '../pages/Card'
+import Loading from "../assets/loading.gif"
+import { Link } from 'react-router-dom'
+
+
 
 function Content() {
+
+    const state = useSelector(state => state.doctors)
+
+
+    const dispatch = useDispatch()
+
+
+    useEffect(() => {
+        GetDoctor("https://xudaybergen.pythonanywhere.com/?format=json", dispatch)
+    }, [])
+
+
     return (
         <section className={style.content}>
             <div className={style.navigation}>
-                <span className={style.nav_home}>Главная</span>
+                <Breadcrumb separator={">"}>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink className='nav_home'><Link to={'/'}>Главная</Link></BreadcrumbLink>
+                    </BreadcrumbItem>
 
-                <img className={style.nav_chevron} src={chevron} alt="chevron" />
-
-                <span className={style.nav_sub}>Запись к врачу</span>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink className='nav_sub'><Link to={'/'}>Запись к врачу</Link></BreadcrumbLink>
+                    </BreadcrumbItem>
+                </Breadcrumb>
             </div>
 
             <div className={style.doctors}>
@@ -34,159 +54,15 @@ function Content() {
 
             <section className={style.cards}>
 
-                <div className={style.doctor_card}>
-
-                    <div className={style.card_image}>
-                        <img src={doctorImg} alt="doctor" />
-                    </div>
-
-                    <div className={style.card_info}>
-                        <div className={style.card_name}>
-                            <Link className={style.card_name_link} to={'/detail'}>Абдулла Абдуллаев</Link>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Должность:</span>
-                            <span className={style.answer}>Оториноларинголог</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Мед. учреждение:</span>
-                            <span className={style.answer}>Семейная поликлиника</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Адрес:</span>
-                            <span className={style.answer}>Республика Каракалпакстан, Нукус, А.Досназаров ул., 110</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Специальность:</span>
-                            <span className={style.answer}>Врач общей практики</span>
-                        </div>
-
-                        <button className={style.card_sub}>
-                            Записаться на прием <img className={style.card_sub_ico} src={chevroRignt} alt="chevron" />
-                        </button>
-
-                    </div>
+            {state.doctors?.length !== 0 ? state.doctors?.map(item => (
+                <Card item={item} key={item.id} />
+            )): 
+                <div className={style.loader}>
+                    <img className={style.loading} src={Loading} />
                 </div>
+            }
 
 
-                <div className={style.doctor_card}>
-
-                    <div className={style.card_image}>
-                        <img src={doctorImg} alt="doctor" />
-                    </div>
-
-                    <div className={style.card_info}>
-                        <div className={style.card_name}>
-                            <p>Абдулла Абдуллаев</p>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Должность:</span>
-                            <span className={style.answer}>Оториноларинголог</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Мед. учреждение:</span>
-                            <span className={style.answer}>Семейная поликлиника</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Адрес:</span>
-                            <span className={style.answer}>Республика Каракалпакстан, Нукус, А.Досназаров ул., 110</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Специальность:</span>
-                            <span className={style.answer}>Врач общей практики</span>
-                        </div>
-
-                        <button className={style.card_sub}>
-                            Записаться на прием <img className={style.card_sub_ico} src={chevroRignt} alt="chevron" />
-                        </button>
-
-                    </div>
-                </div>
-
-
-                <div className={style.doctor_card}>
-
-                    <div className={style.card_image}>
-                        <img src={doctorImg} alt="doctor" />
-                    </div>
-
-                    <div className={style.card_info}>
-                        <div className={style.card_name}>
-                            <p>Абдулла Абдуллаев</p>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Должность:</span>
-                            <span className={style.answer}>Оториноларинголог</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Мед. учреждение:</span>
-                            <span className={style.answer}>Семейная поликлиника</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Адрес:</span>
-                            <span className={style.answer}>Республика Каракалпакстан, Нукус, А.Досназаров ул., 110</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Специальность:</span>
-                            <span className={style.answer}>Врач общей практики</span>
-                        </div>
-
-                        <button className={style.card_sub}>
-                            Записаться на прием <img className={style.card_sub_ico} src={chevroRignt} alt="chevron" />
-                        </button>
-
-                    </div>
-                </div>
-
-                <div className={style.doctor_card}>
-
-                    <div className={style.card_image}>
-                        <img src={doctorImg} alt="doctor" />
-                    </div>
-
-                    <div className={style.card_info}>
-                        <div className={style.card_name}>
-                            <p>Абдулла Абдуллаев</p>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Должность:</span>
-                            <span className={style.answer}>Оториноларинголог</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Мед. учреждение:</span>
-                            <span className={style.answer}>Семейная поликлиника</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Адрес:</span>
-                            <span className={style.answer}>Республика Каракалпакстан, Нукус, А.Досназаров ул., 110</span>
-                        </div>
-
-                        <div className={style.card_role}>
-                            <span className={style.question}>Специальность:</span>
-                            <span className={style.answer}>Врач общей практики</span>
-                        </div>
-
-                        <button className={style.card_sub}>
-                            Записаться на прием <img className={style.card_sub_ico} src={chevroRignt} alt="chevron" />
-                        </button>
-
-                    </div>
-                </div>
             </section>
 
             <div className={style.learn_more}>

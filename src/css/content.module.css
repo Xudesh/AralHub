@@ -1,6 +1,6 @@
 .content{
     background-color: #f3f5f6;
-    padding: 0 7%;
+    padding: 0 10%;
 }
 
 
@@ -48,29 +48,40 @@
     outline: none;
 }
 
+.loader{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 91px;
+    left: 0;
+}
 
+.loading{
+    width: 100%;
+    height: calc(100vh - 90px);
+}
 
 .cards{
-    display: flex;
+    display: grid;
     margin: 30px 0;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 25px;
+    column-gap: 25px;
 }
 
 
 .doctor_card{
-    width: 340px;
     background: white;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
+    height: auto;
 
 }
 
 .card_image img{
     width: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    padding: 10px 60px;
+    border-radius: 15px;
     height: 240px;
 }
 
@@ -84,7 +95,6 @@
 
 .card_name, .card_name_link{
     color: black;
-    cursor: pointer;
     font-size: 20px;
     text-decoration: none;
 }
@@ -105,10 +115,11 @@
     outline: none;
     display: flex;
     color: dodgerblue;
+    padding: 5px 0;
     gap: 4px;
     align-items: center;
     font-size: 15.5px;
-    margin: 7px 0;
+
 }
 
 .card_sub_ico{
@@ -134,4 +145,102 @@
     border-radius: 5px;
     border: none;
     outline: none;
+}
+
+.record, .card_sub{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1232px){
+
+    .cards{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card_image img{
+        height: 220px;
+    }
+
+    .card_name, .card_name_link{
+        font-size: 18px;
+    }
+
+    .card_role{
+        font-size: 14.7px;
+    }
+}
+
+
+@media screen and (max-width: 901px){
+    .cards{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card_image img{
+        height: 195px;
+    }
+
+    .card_name, .card_name_link{
+        font-size: 16.1px;
+    }
+
+
+    .card_role{
+        font-size: 13.8px;
+    }
+
+    .card_sub{
+        font-size: 14.5px;
+    }
+
+    .card_sub_ico{
+        width: 14px;
+        height: 14px;
+    }
+
+    .card_more{
+        padding: 8px 15px;
+        font-size: 13.2px;
+    }
+
+    .all_doctors{
+        font-size: 29px;
+    }
+
+    .nav_sub, .nav_home{
+        font-size: 14.5px;
+    }
+
+    .doctor_select{
+        padding: 4px 0 4px 10px;
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .all_doctors{
+        font-size: 27px;
+    }
+
+    .nav_home, .nav_sub{
+        font-size: 14px;
+    }
+
+    .cards{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media screen and (max-width: 605px){
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .doctor_card{
+        width: auto;
+    }
 }

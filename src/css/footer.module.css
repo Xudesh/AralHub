@@ -1,13 +1,13 @@
 .footer{
     width: 100%;
     background: dodgerblue;
-    height: 210px;
-    padding: 0 7%;
+    padding: 0 10%;
 }
 
 .footer_menu_div{
     display: flex;
     padding: 35px 0;
+    gap: 20px;
     justify-content: space-between;
     border-bottom: 1px solid #fafafa;
 }
@@ -16,6 +16,7 @@
     display: flex;
     list-style: none;
     gap: 48px;
+    flex-wrap: wrap;
 }
 
 .footer_menu_li, .footer_menu_link{
@@ -65,4 +66,33 @@
 
 .policy{
     color: white;
+}
+
+
+
+
+
+
+@media screen and (max-width: 786px){
+    .footer_menu_div{
+        justify-content: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer_menu, .footer_btns{
+        gap: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer_logo_div{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .policy{
+        text-align: start;
+    }
 }

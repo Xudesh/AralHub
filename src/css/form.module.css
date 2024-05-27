@@ -1,0 +1,23 @@
+.forms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 90px);
+    width: 100%;
+}
+
+.contact_form{
+    background-color: dodgerblue;
+    width: 300px;
+    height: 400px;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border-radius: 4px;
+}
+
+.form_headline{
+    color: White;
+    font-size: 20px;
+}

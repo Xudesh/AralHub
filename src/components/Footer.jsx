@@ -9,9 +9,9 @@ function Footer() {
         <div className={style.footer_menu_div}>
             <ul className={style.footer_menu}>
                 <li className={style.footer_menu_li}>
-                    <a className={style.footer_menu_link} href="#">
+                    <Link className={style.footer_menu_link} to="/">
                         Главная
-                    </a>
+                    </Link>
                 </li>
 
                 <li className={style.footer_menu_li}>

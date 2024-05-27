@@ -1,0 +1,83 @@
+.sign_in{
+    width: 100%;
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f5f6;
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 6px;
+    width: 300px;
+    height: 400px;
+    gap: 25px;
+    padding: 15px 25px;
+}
+
+h1{
+    font-size: 24px;
+}
+
+input{
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 35px;
+    padding: 15px;
+}
+
+.register_link{
+    display: flex;
+    gap: 5px;
+    font-size: 15px;
+    flex-direction: column;
+}
+
+span a{
+    color: red;
+}
+
+span a:hover{
+    color: rgb(209, 89, 89);
+    transition: all 100ms ease;
+}
+
+
+button{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 40px;
+    display: inline-block;
+}
+
+.register_form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 6px;
+    width: 310px;
+    height: 450px;
+    gap: 25px;
+    padding: 15px 25px;
+}
+
+
+.login_btn{
+    background-color: dodgerblue;
+}
+
+.register_btn{
+    background-color: #59a16a;
+    color: #f3f5f6;
+}
+
+.login_link{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
